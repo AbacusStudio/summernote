@@ -115,7 +115,14 @@ define([
 
       $video.addClass('note-video-clip');
 
-      return $video[0];
+      $video.addClass('embed-responsive-item');
+
+      var $div = $('<div>')
+          .addClass('embed-responsive')
+          .addClass('embed-responsive-16by9');
+      $video.appendTo($div);
+
+      return $div[0];
     };
 
     this.show = function () {
